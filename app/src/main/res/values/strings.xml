@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">VisaPaymentApp</string>
+    <string name="bank_cards">Банковские карты</string>
+    <string name="payment_info">Платёжные данные</string>
+    <string name="payment_description">Данные Вашей банковской карты для осуществления вызовов</string>
+    <string name="card_number">Номер карты</string>
+    <string name="expire_date">Срок действия</string>
+    <string name="cvv">CVV</string>
+    <string name="save">Сохранить</string>
+    <string name="delete_card">Удалить карту</string>
+    <string name="error_message">Срок действия карты истёк или указан не верно</string>
+    <string name="error_description">Пожалуйста, проверьте корректность внесения данных карты или добавьте новую карту для проведения оплаты</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mm_yy">MM/YY</string>
+</resources>
