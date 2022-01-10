@@ -12,6 +12,7 @@ import com.example.visapaymentapp.MainActivity
 import com.example.visapaymentapp.R
 import com.example.visapaymentapp.databinding.FragmentPaymentMethodBinding
 import com.example.visapaymentapp.extensions.openPage
+import com.example.visapaymentapp.ui.OnSwipeTouchListener
 import com.example.visapaymentapp.ui.viewmodels.PaymentViewModel
 
 class PaymentMethod : Fragment() {
@@ -29,7 +30,38 @@ class PaymentMethod : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         paymentMethodBinding = FragmentPaymentMethodBinding.inflate(inflater, container, false)
-        return paymentMethodBinding?.root
+        val view: View? = paymentMethodBinding?.root
+        val addFragment = PaymentAction.newInstance(isForEdit = false)
+        println("GOHAR::: $view")
+        view?.setOnTouchListener(object : OnSwipeTouchListener(context) {
+
+            override fun onSwipeLeft() {
+                super.onSwipeLeft()
+
+                addFragment.openPage(true, activity as? MainActivity)
+            }
+
+            override fun onSwipeRight() {
+                super.onSwipeRight()
+                activity?.supportFragmentManager?.beginTransaction()
+                    ?.addToBackStack(null)
+                    ?.replace(R.id.fragmentContainerView, addFragment)
+                    ?.commit()
+                println("GOHAR:::: RIGHTFROMFRAGMENT")
+            }
+
+            override fun onSwipeTop() {
+                super.onSwipeTop()
+                println("GOHAR:::: TOPFROMFRAGMENT")
+            }
+
+            override fun onSwipeBottom() {
+                super.onSwipeBottom()
+                println("GOHAR:::: BOTTOMFROMFRAGMENT")
+            }
+        })
+        println("GOHAR::: setOnTouchListener")
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

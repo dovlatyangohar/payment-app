@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:outlineSpotShadowColor="@color/accent"
+    android:backgroundTint="@color/light_blue"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/size_15"
+    android:layout_margin="@dimen/space_10"
+    app:cardElevation="@dimen/size_4"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/visaCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_20"
+            android:layout_marginTop="@dimen/space_15"
+            android:layout_marginBottom="@dimen/space_15"
+            android:src="@drawable/card_type"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/arrowImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:layout_marginEnd="@dimen/space_20"
+            android:layout_marginBottom="@dimen/space_20"
+            android:src="@drawable/ic_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cardNumberTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/space_40"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textFontWeight="500"
+            android:textSize="@dimen/text_size_16"
+            app:layout_constraintBottom_toBottomOf="@+id/visaCard"
+            app:layout_constraintEnd_toStartOf="@+id/arrowImageView"
+            app:layout_constraintStart_toEndOf="@+id/visaCard"
+            app:layout_constraintTop_toTopOf="@+id/visaCard" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
